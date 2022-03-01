@@ -33,9 +33,9 @@ function getAll() {
 
 function updateBook(book, shelf) {
   return (dispatch) => {
-    apiCalls.updateBook(book, shelf).then((data) => {
-      dispatch(success(data));
-      window.location.reload();
+    apiCalls.updateBook(book, shelf).then(() => {
+      dispatch(success(book));
+      // window.location.reload();
     });
   };
 

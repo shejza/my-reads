@@ -10,7 +10,9 @@ export function books(state = {}, action) {
       };
       case 'BOOKS_UPDATE':
         return {
-          books: action.books
+          books: state.books.map((book) =>
+          book.id === action.book.id ? action.book : book
+        ),
         };
       case 'BOOKS_UPDATE_FAIL':
         return {
