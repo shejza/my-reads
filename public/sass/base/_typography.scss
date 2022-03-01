@@ -1,0 +1,7 @@
+body {
+    font-family: $font-nunito;
+    @include fontStyle;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}

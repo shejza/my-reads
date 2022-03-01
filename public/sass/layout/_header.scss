@@ -1,0 +1,21 @@
+.navigation {
+  padding: 8px;
+  background: $color-purple;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    font-weight: 400;
+    color: $color-white;
+  }
+
+  &__navItem {
+    color: $color-white;
+    font-weight: bold;
+    border: 1px solid;
+    padding: 0.4rem 1rem;
+    border-radius: 4px; 
+    text-decoration: none;
+  }
+}
