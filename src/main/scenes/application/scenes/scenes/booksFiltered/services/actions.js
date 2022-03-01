@@ -2,6 +2,7 @@ import { apiCalls } from './api';
 
 export const actions = {
   getAll,
+  updateBook
 };
 
 function getAll() {
@@ -25,6 +26,28 @@ function getAll() {
   function failure(error) {
     return {
       type: 'BOOKS_GETALL_FAIL',
+      error,
+    };
+  }
+}
+
+function updateBook(book, shelf) {
+  return (dispatch) => {
+    apiCalls.updateBook(book, shelf).then((data) => {
+      dispatch(success(data));
+      window.location.reload();
+    });
+  };
+
+  function success(book) {
+    return {
+      type: 'BOOKS_UPDATE',
+      book,
+    };
+  }
+  function failure(error) {
+    return {
+      type: 'BOOKS_UPDATE_FAIL',
       error,
     };
   }

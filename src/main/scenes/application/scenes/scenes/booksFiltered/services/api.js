@@ -3,6 +3,7 @@ import { headers } from 'helpers/headers';
 
 export const apiCalls = {
   getBooks,
+  updateBook
 };
 
 function getBooks() {
@@ -14,3 +15,18 @@ function getBooks() {
 
   return fetch(requestUrl, requestOptions).then((response) => response.json());
 }
+
+function updateBook(book, shelf) {
+  const requestUrl = `${apiUrl}/books/${book.id}`;
+  const shelfUpdate = JSON.stringify({
+    shelf
+  })
+  const requestOptions = {
+    method: 'PUT',
+    headers: headers(),
+    body: shelfUpdate
+  };
+  console.log(requestOptions  )
+  return fetch(requestUrl, requestOptions).then((response) => response.json());
+}
+

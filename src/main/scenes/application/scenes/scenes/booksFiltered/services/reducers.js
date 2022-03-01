@@ -8,6 +8,14 @@ export function books(state = {}, action) {
       return {
         error: action.error,
       };
+      case 'BOOKS_UPDATE':
+        return {
+          books: action.books
+        };
+      case 'BOOKS_UPDATE_FAIL':
+        return {
+          error: action.error,
+        };
     default:
       return state;
   }
