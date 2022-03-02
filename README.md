@@ -16,6 +16,12 @@ The main page also has a `search` that allows you to find books to add to your l
 
 And `All books` navigation to see all books
 
+## Installation 
+
+ - Clone project 
+ - `npm install` to install the dependencies of the project
+ - `npm start` to launch the project
+ 
 ### View Project live
 [My Reads](https://my-reads-application-in-react.herokuapp.com/)
 
