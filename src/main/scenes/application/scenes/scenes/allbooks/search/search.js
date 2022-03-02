@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
 
 export default function Search({addQuery}) {
-  // const dispatch = useDispatch();
   
   const handleChange = (e) => {
     addQuery(e.target.value)
-    // dispatch(actions.search(query));
   }
   return (
     <div className='search'>

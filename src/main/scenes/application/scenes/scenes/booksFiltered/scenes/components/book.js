@@ -2,11 +2,13 @@ import React from "react";
 import { actions } from './../../services/actions';
 import { useDispatch } from 'react-redux';
 
-export default function Book({ book }) {
+export default function Book({ book, shelf }) {
     const dispatch = useDispatch();
+    
     const handleClick = ( book, shelf) => {
       dispatch(actions.updateBook(book, shelf));
     }
+    console.log(shelf)
   return (
     <>
       <li className="books-grid__item">
@@ -21,11 +23,11 @@ export default function Book({ book }) {
               }}
             ></div>
             <div className="book-shelf-changer">
-              <select value={book.shelf} className="book-self-changer-select" onChange={(e) => handleClick(book, e.target.value)}>
+              <select defaultValue={shelf} className="book-self-changer-select" onChange={(e) => handleClick(book, e.target.value)}>
                 <option>
-                  Move to...
+                  Move to... 
                 </option>
-                <option value="currentlyReading">Currently Reading</option>
+                <option value="currentlyReading" >Currently Reading</option>
                 <option value="wantToRead">Want to Read</option>
                 <option value="read">Read</option>
                 <option value="none">None</option>
