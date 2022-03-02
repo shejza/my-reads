@@ -18,6 +18,7 @@ And `All books` navigation to see all books
 
 ### My Notes
 
-Please feel free to check [https://elated-blue-506.notion.site/My-Reads-Project-343eb7640fa74b0ea012580fc5bf94b7](My Notes), there are the steps I usually follow in carrying out a task or project.
+Please feel free to check 
+[https://elated-blue-506.notion.site/My-Reads-Project-343eb7640fa74b0ea012580fc5bf94b7](My Notes), there are the steps I usually follow in carrying out a task or project.
 
 
