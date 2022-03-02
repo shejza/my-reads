@@ -1,32 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { actions } from "./../booksFiltered/services/actions";
+import { useSelector, useDispatch } from "react-redux";
 import Book from "./../booksFiltered/scenes/components/book";
+import Search from './search/search';
+import { actions } from './services/actions';
+import { searchTerms } from './../../../../../../helpers/search-terms';
 
 export default function AllBooks() {
   const dispatch = useDispatch();
-  const { books } = useSelector((state) => state.books);
-  const [booksList, setBooks] = useState([]);
-
-  useEffect(() => {
-    dispatch(actions.getAll());
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (!!books) {
-      setBooks(books);
+  const { searchedBooks } = useSelector((state) => state.searchedBooks);
+  const [_searchedBooks, setSearchedBooks] = useState([]);
+  const [_query, setQuery] = useState('');
+  const addQuery = (query) => {
+    if(searchTerms().includes(query.charAt(0).toUpperCase() + query.slice(1))) { 
+      setQuery(query);
+    } else {
+      if(query.length === 0) {
+        setQuery('');
+        setSearchedBooks([])
+      }
     }
-  }, [books]);
+  }
+
+  useEffect(() => {
+    if (_query.length > 0) {
+      dispatch(actions.search(_query));
+    }
+  }, [dispatch, _query]);
+
+  useEffect(() => {
+    if (!!searchedBooks) {
+      setSearchedBooks(searchedBooks);
+    } 
+  }, [searchedBooks]);
+ 
+ 
+  const allBooksSearch = _searchedBooks.length === 0  ? <span>Loading..</span> : _searchedBooks.books.map((book) => (
+    <Book key={book.id} book={book} />
+  ))
+
   return (
     <>
       <h2 className="all-books">AllBooks</h2>
+      <Search addQuery={addQuery}/>
       <div className="book-container">
         <div className="bookshelf">
           <div className="bookshelf-books">
             <ol className="books-grid">
-              {booksList.map((book) => (
-                <Book key={book.id} book={book} />
-              ))}
+              {allBooksSearch}
             </ol>
           </div>
         </div>

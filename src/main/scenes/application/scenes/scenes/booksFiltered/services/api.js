@@ -26,7 +26,8 @@ function updateBook(book, shelf) {
     headers: headers(),
     body: shelfUpdate
   };
-  console.log(requestOptions  )
+
   return fetch(requestUrl, requestOptions).then((response) => response.json());
 }
+
 

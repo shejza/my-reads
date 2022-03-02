@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Search from "./search/search";
 import BooksShelf from "./scenes/index";
 import { actions } from "./services/actions";
 
@@ -21,7 +20,6 @@ export default function BooksFiltered() {
 
   return (
     <>
-      <Search />
       <BooksShelf books={booksList} />
     </>
   );
