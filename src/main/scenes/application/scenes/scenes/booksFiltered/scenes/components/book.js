@@ -23,7 +23,7 @@ export default function Book({ book, shelf }) {
               }}
             ></div>
             <div className="book-shelf-changer">
-              <select defaultValue={shelf} className="book-self-changer-select" onChange={(e) => handleClick(book, e.target.value)}>
+              <select defaultValue={shelf ? shelf : 'none'} className="book-self-changer-select" onChange={(e) => handleClick(book, e.target.value)}>
                 <option>
                   Move to... 
                 </option>
