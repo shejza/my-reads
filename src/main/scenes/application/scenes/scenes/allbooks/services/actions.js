@@ -8,6 +8,7 @@ function search(query) {
   return (dispatch) => {
     apiCalls.search(query).then((query) => {
       dispatch(success(query));
+     
     });
   };
 

@@ -13,7 +13,7 @@ export default class Dashboard extends Component {
           <div className="container">
             <Routes>
               <Route path="/" element={<BooksFiltered />} />
-              <Route path="allbooks" exact element={<AllBooks />} />
+              <Route path="search" exact element={<AllBooks />} />
             </Routes>
           </div>
         </main>

@@ -17,11 +17,11 @@ export default function Book({ book }) {
               style={{
                 width: 128,
                 height: 193,
-                backgroundImage: `url(${book.imageLinks.thumbnail})`,
+                backgroundImage: `url(${book.imageLinks && book.imageLinks.thumbnail})`,
               }}
             ></div>
             <div className="book-shelf-changer">
-              <select className="book-self-changer-select" onChange={(e) => handleClick(book, e.target.value)}>
+              <select value={book.shelf} className="book-self-changer-select" onChange={(e) => handleClick(book, e.target.value)}>
                 <option>
                   Move to...
                 </option>
