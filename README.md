@@ -16,6 +16,9 @@ The main page also has a `search` that allows you to find books to add to your l
 
 And `All books` navigation to see all books
 
+### View Project live
+[My Reads](https://my-reads-application-in-react.herokuapp.com/)
+
 ### My Notes
 
 Please feel free to check 
